@@ -3,9 +3,10 @@
 #endif 
 
 #include "WinMain_stdfx.h"
-#include "WinMessageHandler.h"
+#include "WinMessageHelpers.h"
+#include "WinClassCreator.h"
 
-using namespace WinMessages;
+using namespace WinMsgHelpers;
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
@@ -45,6 +46,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow
 	}
 
 	ShowWindow(hwnd, nCmdShow);
+	UpdateWindow(hwnd);
 
 	// Run the message loop.
 
@@ -71,10 +73,10 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			PAINTSTRUCT ps;
 			HDC hdc = BeginPaint(hwnd, &ps);
 
+
 			//UpdatePaintRegion Function handles all the redraw requests
 			UpdatePaintRegion(hwnd, wParam, hdc, ps); 
 
-			FillRect(hdc, &ps.rcPaint, (HBRUSH)(COLOR_WINDOW + 1));
 
 			EndPaint(hwnd, &ps);
 		}

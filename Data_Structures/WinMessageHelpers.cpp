@@ -24,6 +24,11 @@ namespace WinMsgHelpers
 	void UpdatePaintRegion(HWND _hwnd, WPARAM _wParam, HDC &_hdc, PAINTSTRUCT &_ps)
 	{
 		//TODO: Add paint calls here.
+		FillRect(_hdc, &_ps.rcPaint, (HBRUSH)(COLOR_WINDOW + 2));
+
+		SetBkColor(_hdc, RGB(133, 100, 295));
+		TextOut(_hdc, 0, 0, L"Hello, World!", 14);
+
 	}
 
 }

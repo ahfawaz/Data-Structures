@@ -131,12 +131,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp" />
-    <ClCompile Include="WinMessageHandler.cpp" />
+    <ClCompile Include="WinMessageHelpers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework.h" />
     <ClInclude Include="WinMain_stdfx.h" />
-    <ClInclude Include="WinMessageHandler.h" />
+    <ClInclude Include="WinMessageHelpers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

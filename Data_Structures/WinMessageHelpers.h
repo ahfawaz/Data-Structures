@@ -2,7 +2,7 @@
 
 #include "Framework.h"
 
-namespace WinMessages
+namespace WinMsgHelpers
 {
 #define HAS_MENU FALSE
 #define WINDOW_STYLE_VALUE WS_OVERLAPPEDWINDOW

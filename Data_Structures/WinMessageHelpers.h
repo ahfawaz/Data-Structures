@@ -8,5 +8,4 @@ namespace WinMsgHelpers
 #define WINDOW_STYLE_VALUE WS_OVERLAPPEDWINDOW
 
 	void OnSize(HWND, WPARAM, int, int);
-	void UpdatePaintRegion(HWND, WPARAM, HDC&, PAINTSTRUCT&);
 }

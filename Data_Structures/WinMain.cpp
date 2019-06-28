@@ -4,49 +4,23 @@
 
 #include "WinMain_stdfx.h"
 #include "WinMessageHelpers.h"
-#include "WinClassCreator.h"
+#include "BaseWindow.h"
+#include "MainWindow.h"
 
-using namespace WinMsgHelpers;
-
-LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+#define MAIN_WINDOW window0
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow)
 {
-	// Register the window class.
-	const wchar_t CLASS_NAME[] = L"Sample Window Class";
+	MainWindow MAIN_WINDOW;
 
-	WNDCLASS wc = { };
-
-	wc.lpfnWndProc = WindowProc;
-	wc.hInstance = hInstance;
-	wc.lpszClassName = CLASS_NAME;
-
-	RegisterClass(&wc);
-
-	// Create the window.
-
-	HWND hwnd = CreateWindowEx(
-		0,                              // Optional window styles.
-		CLASS_NAME,                     // Window class
-		L"Data Structures Showcase",    // Window text
-		WINDOW_STYLE_VALUE,				// Window style
-
-		// Size and position
-		CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
-
-		NULL,       // Parent window    
-		NULL,       // Menu
-		hInstance,  // Instance handle
-		NULL        // Additional application data
-	);
-
-	if (hwnd == NULL)
+	if (!MAIN_WINDOW.Create(L"Building Structures...Data Structures", WS_OVERLAPPEDWINDOW))
 	{
 		return 0;
 	}
 
-	ShowWindow(hwnd, nCmdShow);
-	UpdateWindow(hwnd);
+
+	ShowWindow(MAIN_WINDOW.Window(), nCmdShow);
+	UpdateWindow(MAIN_WINDOW.Window());
 
 	// Run the message loop.
 
@@ -60,36 +34,4 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow
 	return 0;
 }
 
-LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
-{
-	switch (uMsg)
-	{
-	case WM_DESTROY:
-		PostQuitMessage(0);
-		return 0;
-
-	case WM_PAINT:
-		{
-			PAINTSTRUCT ps;
-			HDC hdc = BeginPaint(hwnd, &ps);
-
-
-			//UpdatePaintRegion Function handles all the redraw requests
-			UpdatePaintRegion(hwnd, wParam, hdc, ps); 
-
-
-			EndPaint(hwnd, &ps);
-		}
-	return 0;
-	case WM_SIZE:
-		{
-			int width = LOWORD(lParam);
-			int height = HIWORD(lParam);
-
-			OnSize(hwnd, (UINT)wParam, width, height);
-		}
-
-	}
-	return DefWindowProc(hwnd, uMsg, wParam, lParam);
-}
 

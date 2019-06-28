@@ -130,11 +130,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="WinMain.cpp" />
     <ClCompile Include="WinMessageHelpers.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseWindow.h" />
     <ClInclude Include="Framework.h" />
+    <ClInclude Include="MainWindow.h" />
     <ClInclude Include="WinMain_stdfx.h" />
     <ClInclude Include="WinMessageHelpers.h" />
   </ItemGroup>

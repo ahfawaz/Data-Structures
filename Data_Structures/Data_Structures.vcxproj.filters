@@ -11,22 +11,22 @@
     <Filter Include="Windows">
       <UniqueIdentifier>{88d178d3-0552-4be7-bd3a-77b84ebe3cae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="D2D1 Renderer">
+      <UniqueIdentifier>{c39cabc6-1da1-4dbe-b902-0754ec58e0a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WinMessageHelpers.cpp">
-      <Filter>Applictation</Filter>
-    </ClCompile>
     <ClCompile Include="WinMain.cpp">
       <Filter>Applictation</Filter>
     </ClCompile>
     <ClCompile Include="MainWindow.cpp">
       <Filter>Windows</Filter>
     </ClCompile>
+    <ClCompile Include="Renderer2D.cpp">
+      <Filter>D2D1 Renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WinMessageHelpers.h">
-      <Filter>Applictation</Filter>
-    </ClInclude>
     <ClInclude Include="WinMain_stdfx.h">
       <Filter>Applictation</Filter>
     </ClInclude>
@@ -38,6 +38,12 @@
     </ClInclude>
     <ClInclude Include="MainWindow.h">
       <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="UsefulMacros.h">
+      <Filter>Applictation</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer2D.h">
+      <Filter>D2D1 Renderer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

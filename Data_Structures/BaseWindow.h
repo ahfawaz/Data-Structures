@@ -1,12 +1,11 @@
 #pragma once
 #include "Framework.h"
-#include "WinMessageHelpers.h"
-
-using namespace WinMsgHelpers;
 
 template <class DERIVED_TYPE>
 class BaseWindow
 {
+	int RenderResourceID;
+
 public:
 	static LRESULT CALLBACK WindowProc(HWND _hWnd, UINT _uMsg, WPARAM _wParam, LPARAM _lParam)
 	{
@@ -33,7 +32,7 @@ public:
 		}
 	}
 
-	BaseWindow() : m_hWnd(NULL) {}
+	BaseWindow() : m_hWnd(NULL), RenderResourceID(NO_ID) {}
 
 	BOOL Create(
 		PCWSTR	_lpWindowName,
@@ -68,6 +67,9 @@ protected:
 
 	virtual PCWSTR ClassName() const = 0;
 	virtual LRESULT HandleMessage(UINT _uMsg, WPARAM _wParam, LPARAM _lParam) = 0;
+	virtual HRESULT	InitializeCOMLib() = 0;
+	int GetRenderResourceID() { return RenderResourceID; };
+	void SetRenderResourceID(int _ID) { RenderResourceID = _ID; }
 
 	HWND m_hWnd;
 };

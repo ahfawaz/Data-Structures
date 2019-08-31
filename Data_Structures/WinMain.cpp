@@ -3,7 +3,6 @@
 #endif 
 
 #include "WinMain_stdfx.h"
-#include "WinMessageHelpers.h"
 #include "BaseWindow.h"
 #include "MainWindow.h"
 

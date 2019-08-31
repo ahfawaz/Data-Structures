@@ -131,15 +131,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="Renderer2D.cpp" />
     <ClCompile Include="WinMain.cpp" />
-    <ClCompile Include="WinMessageHelpers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseWindow.h" />
     <ClInclude Include="Framework.h" />
     <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="Renderer2D.h" />
+    <ClInclude Include="UsefulMacros.h" />
     <ClInclude Include="WinMain_stdfx.h" />
-    <ClInclude Include="WinMessageHelpers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

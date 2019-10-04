@@ -140,6 +140,7 @@
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="Renderer2D.h" />
     <ClInclude Include="UsefulMacros.h" />
+    <ClInclude Include="VectorArray.h" />
     <ClInclude Include="WinMain_stdfx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -31,7 +31,7 @@ LRESULT MainWindow::HandleMessage(UINT _uMsg, WPARAM _wParam, LPARAM _lParam)
 	{
 	case WM_CREATE:
 	{
-		pMainRender = new Renderer2D();
+		pMainRender = DBG_NEW Renderer2D();
 		if (FAILED(pMainRender->CreateD2DFactory()))
 		{
 			SafeDelete(pMainRender);

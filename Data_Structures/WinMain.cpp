@@ -30,6 +30,11 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow
 		DispatchMessage(&msg);
 	}
 
+#ifdef MEM_LEAK_DECTECTION
+	_CrtDumpMemoryLeaks();
+#endif // MEM_LEAK_DECTECTION
+
+
 	return 0;
 }
 

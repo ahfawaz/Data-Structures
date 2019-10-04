@@ -14,6 +14,12 @@
     <Filter Include="D2D1 Renderer">
       <UniqueIdentifier>{c39cabc6-1da1-4dbe-b902-0754ec58e0a4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Data Structures">
+      <UniqueIdentifier>{74cef6b8-0a62-4abe-b69d-523c2556b2a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Algorithms">
+      <UniqueIdentifier>{72333c34-4efe-45a9-81d3-e8eee4cffdba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -44,6 +50,9 @@
     </ClInclude>
     <ClInclude Include="Renderer2D.h">
       <Filter>D2D1 Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorArray.h">
+      <Filter>Data Structures</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
